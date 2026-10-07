@@ -36,14 +36,14 @@ const Navbar = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '0 2rem',
+        padding: '0 1.5rem',
         position: 'sticky',
         top: 0,
         zIndex: 90,
       }}
     >
       {/* Current Page Title & Breadcrumb */}
-      <div>
+      <div className="navbar-title-container">
         <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#f9fafb' }}>
           {getPageTitle(location.pathname)}
         </div>
@@ -53,15 +53,15 @@ const Navbar = () => {
       </div>
 
       {/* Right Controls */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
         {/* Quick Add Product Button */}
         <Link
           to="/products/add"
-          className="btn btn-primary"
+          className="btn btn-primary new-product-btn"
           style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }}
         >
           <Plus size={16} />
-          <span>New Product</span>
+          <span className="hide-on-mobile">New Product</span>
         </Link>
 
         {/* User Card & Logout */}
@@ -93,7 +93,7 @@ const Navbar = () => {
             {user?.name ? user.name.charAt(0).toUpperCase() : 'A'}
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div className="user-info-text" style={{ display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '0.82rem', fontWeight: 600, color: '#f3f4f6', lineHeight: 1.2 }}>
               {user?.name || 'Administrator'}
             </span>
