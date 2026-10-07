@@ -1,0 +1,15 @@
+node_modules/
+**/node_modules/
+.env
+**/.env
+.env.local
+**/.env.local
+dist/
+**/dist/
+build/
+**/build/
+uploads/*
+**/uploads/*
+!uploads/.gitkeep
+!**/uploads/.gitkeep
+.DS_Store
